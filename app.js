@@ -11,7 +11,8 @@ if (process.env.NODE_ENV != "production") {
   const ExpressError = require("./utils/ExpressError");
   
   // Import the new Router
-  const listingsRouter = require("./routes/listings.js"); 
+  const listingsRouter = require("./routes/listings.js");
+  const reviewsRouter = require("./routes/reviews.js"); 
   
   const MONGO_URL = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/HavenStay";
   
@@ -41,6 +42,9 @@ if (process.env.NODE_ENV != "production") {
   
   // Use the Listings Router (This was the broken part)
   app.use("/listings", listingsRouter);
+  
+  // Use the Reviews Router
+  app.use("/listings/:id/reviews", reviewsRouter);
   
   // 404 Handler (For all other routes)
   app.use((req, res, next) => {

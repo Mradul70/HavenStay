@@ -24,9 +24,9 @@ router.get(
     "/:id",
     wrapAsync(async (req, res) => {
         const { id } = req.params;
-        const foundListing = await Listing.findById(id);
+        const foundListing = await Listing.findById(id).populate("reviews");
         if (!foundListing) {
-            throw new ExpressError("Listing not found", 404);
+            throw new ExpressError(404, "Listing not found");
         }
         res.render("listings/show.ejs", { listing: foundListing });
     })
@@ -50,7 +50,7 @@ router.get(
         const { id } = req.params;
         const foundListing = await Listing.findById(id);
         if (!foundListing) {
-            throw new ExpressError("Listing not found", 404);
+            throw new ExpressError(404, "Listing not found");
         }
         res.render("listings/edit.ejs", { listing: foundListing });
     })
@@ -66,7 +66,7 @@ router.put(
         // Preserve existing image object if only URL is being updated
         const existingListing = await Listing.findById(id);
         if (!existingListing) {
-            throw new ExpressError("Listing not found", 404);
+            throw new ExpressError(404, "Listing not found");
         }
         if (updatedListing.image && updatedListing.image.url && !updatedListing.image.filename) {
             updatedListing.image.filename = existingListing.image?.filename || undefined;
