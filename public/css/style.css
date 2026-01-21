@@ -1,0 +1,58 @@
+:root {
+    --navbar-height: 5rem;
+}
+
+body {
+    /* OPTION A: If using 'fixed-top' on navbar, keep this. 
+       OPTION B: If using 'sticky-top' (current), you can remove this to remove the gap.
+       But for safety, let's keep it consistent. */
+    
+    display: flex;         /* NEW: Makes the body a flex container */
+    flex-direction: column; /* NEW: Stacks content vertically */
+    min-height: 100vh;      /* NEW: Forces body to take full viewport height */
+}
+
+/* This pushes the footer to the bottom */
+.container {
+    flex: 1;
+}
+
+.navbar {
+    height: var(--navbar-height);
+    background-color: white;
+}
+
+.fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+/* Card Styling */
+.card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    /* NEW: Forces all images to be exactly the same size */
+    height: 20rem !important;
+    object-fit: cover !important;
+    border-radius: 1rem !important;
+    width: 100% !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text {
+    margin-bottom: 0.5rem; /* slight spacing for text */
+}
+
+.card-text p {
+    font-weight: 400 !important;
+}
