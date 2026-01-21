@@ -3,56 +3,72 @@
 }
 
 body {
-    /* OPTION A: If using 'fixed-top' on navbar, keep this. 
-       OPTION B: If using 'sticky-top' (current), you can remove this to remove the gap.
-       But for safety, let's keep it consistent. */
-    
-    display: flex;         /* NEW: Makes the body a flex container */
-    flex-direction: column; /* NEW: Stacks content vertically */
-    min-height: 100vh;      /* NEW: Forces body to take full viewport height */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Professional Soft Gray Background */
+    background-color: #EEFCCE !important;
 }
 
-/* This pushes the footer to the bottom */
 .container {
     flex: 1;
 }
 
+/* Navbar Styling - Keeps it clean and white */
 .navbar {
-    height: var(--navbar-height);
-    background-color: white;
+    height: 4rem;
+    background-color: #EEFCCE !important; 
+    border-bottom: 1px solid #eaeaea; /* Subtle separator line */
 }
 
+/* Fix for the Compass Icon disappearing */
 .fa-compass {
-    color: #fe424d;
+    color: #fe424d !important; /* Airbnb Red */
     font-size: 2rem;
 }
 
+/* Navigation Links */
 .nav-link {
-    color: #222222 !important;
+    color: #222222 !important; /* Dark Gray text */
+    font-weight: 500;
 }
 
-/* Card Styling */
+/* Footer Styling */
+.f-info {
+    background-color: #f8f9fa !important; /* Matches body background */
+    padding: 1rem 0;
+    text-align: center;
+    border-top: 1px solid #eaeaea;
+}
+
+/* Card Styling - The "Pop" Effect */
 .card {
     border: none !important;
     margin-bottom: 2rem;
+    background-color: #EEFCCE !important; /* Forces card to be white */
+    border-radius: 1rem !important; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.04); /* Subtle shadow for depth */
+}
+
+.card:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
 }
 
 .card-img-top {
-    /* NEW: Forces all images to be exactly the same size */
     height: 20rem !important;
     object-fit: cover !important;
-    border-radius: 1rem !important;
+    border-top-left-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
     width: 100% !important;
 }
 
 .card-body {
-    padding: 0 !important;
+    padding: 1rem !important;
 }
 
+/* Text inside cards */
 .card-text {
-    margin-bottom: 0.5rem; /* slight spacing for text */
-}
-
-.card-text p {
-    font-weight: 400 !important;
+    color: #222222;
 }
