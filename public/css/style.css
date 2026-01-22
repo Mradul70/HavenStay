@@ -70,5 +70,9 @@ body {
 
 /* Text inside cards */
 .card-text {
-    color: #222222;
+    margin-bottom: 0.5rem; /* slight spacing for text */
+}
+
+.card-text p {
+    font-weight: 400 !important;
 }
