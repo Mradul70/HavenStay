@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
 const Listing = require("./models/listing");
 
-// Use env var or local MongoDB
-const dbUrl = process.env.ATLASDB_URL || process.env.MONGO_URL || "mongodb://127.0.0.1:27017/HavenStay";
+// TEMPORARY: Pointing seed script to Cloud
+// TEMPORARY: The "Long Link" to bypass your local internet block
+const dbUrl = "mongodb://saxenamridul13_db_user:havenstay2026@ac-j7dbbm9-shard-00-00.r2csnca.mongodb.net:27017,ac-j7dbbm9-shard-00-01.r2csnca.mongodb.net:27017,ac-j7dbbm9-shard-00-02.r2csnca.mongodb.net:27017/HavenStay?ssl=true&replicaSet=atlas-14bfro-shard-0&authSource=admin&retryWrites=true&w=majority"; 
 mongoose.connect(dbUrl)
   .then(() => console.log("DB connected"))
   .catch(err => console.log(err));
