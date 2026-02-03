@@ -21,10 +21,8 @@ if (process.env.NODE_ENV != "production") {
   const usersRouter = require("./routes/users.js"); 
   
 
-// TEMPORARY: Hardcoding the connection string to force Render to see it
-const dbUrl = "mongodb://saxenamridul13_db_user:havenstay2026@ac-j7dbbm9-shard-00-00.r2csnca.mongodb.net:27017,ac-j7dbbm9-shard-00-01.r2csnca.mongodb.net:27017,ac-j7dbbm9-shard-00-02.r2csnca.mongodb.net:27017/HavenStay?ssl=true&replicaSet=atlas-14bfro-shard-0&authSource=admin&retryWrites=true&w=majority";
-
-// const dbUrl = process.env.ATLASDB_URL || "mongodb://127.0.0.1:27017/HavenStay";
+// Use env var for Atlas (set ATLASDB_URL or MONGO_URL); fallback to local MongoDB
+const dbUrl = process.env.ATLASDB_URL || process.env.MONGO_URL || "mongodb://127.0.0.1:27017/HavenStay";
 
 main()
   .then(() => {
