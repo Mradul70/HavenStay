@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
 const Listing = require("./models/listing");
 
-mongoose.connect("mongodb://127.0.0.1:27017/HavenStay")
+// Use env var or local MongoDB
+const dbUrl = process.env.ATLASDB_URL || process.env.MONGO_URL || "mongodb://127.0.0.1:27017/HavenStay";
+mongoose.connect(dbUrl)
   .then(() => console.log("DB connected"))
   .catch(err => console.log(err));
 
