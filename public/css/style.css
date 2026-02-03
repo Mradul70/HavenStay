@@ -2,12 +2,17 @@
     --navbar-height: 5rem;
 }
 
+html {
+    scroll-padding-top: 7rem;
+}
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding-top: 6rem; /* var(--navbar-height) + 1rem - content never hidden behind fixed navbar */
     /* Professional Soft Gray Background */
-    background-color: #EEFCCE !important;
+    background-color: #f8f9fa !important;
 }
 
 .container {
@@ -17,7 +22,7 @@ body {
 /* Navbar Styling - Keeps it clean and white */
 .navbar {
     height: 4rem;
-    background-color: #121212 !important; 
+    background-color: #EEFCCE !important; 
     border-bottom: 1px solid #eaeaea; /* Subtle separator line */
 }
 
@@ -35,17 +40,54 @@ body {
 
 /* Footer Styling */
 .f-info {
-    background-color: #f8f9fa !important; /* Matches body background */
-    padding: 1rem 0;
+    background-color: #f0f0f0 !important;
+    padding: 1.5rem 0;
     text-align: center;
     border-top: 1px solid #eaeaea;
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+.f-info a {
+    color: #495057;
+    text-decoration: none;
+}
+
+.f-info a:hover {
+    text-decoration: underline;
+}
+
+.f-info-links {
+    margin-bottom: 1rem;
+}
+
+.f-info-links a {
+    margin: 0 0.75rem;
+}
+
+.f-info-bottom {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.f-info-bottom a {
+    margin: 0 0.5rem;
+}
+
+.f-info-social {
+    margin-top: 0.75rem;
+}
+
+.f-info-social a {
+    margin: 0 0.5rem;
+    font-size: 1.1rem;
 }
 
 /* Card Styling - The "Pop" Effect */
 .card {
     border: none !important;
     margin-bottom: 2rem;
-    background-color: #EEFCCE !important; /* Forces card to be white */
+    background-color: #f8f9fa !important; /* Forces card to be white */
     border-radius: 1rem !important; /* Rounded corners */
     box-shadow: 0 4px 6px rgba(0,0,0,0.04); /* Subtle shadow for depth */
 }
@@ -75,4 +117,83 @@ body {
 
 .card-text p {
     font-weight: 400 !important;
+}
+
+/* Clickable card link - full card is the link */
+.link-overlay {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+.link-overlay:hover {
+    color: inherit;
+}
+
+/* --- Airbnb Navbar Clone Styles --- */
+
+/* Center Search Pill */
+.search-bar {
+    border: 1px solid #dddddd;
+    border-radius: 40px;
+    padding: 0.4rem 0.5rem 0.4rem 1.5rem; /* Left padding for text, Right for button */
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+    background-color: white;
+}
+
+.search-bar:hover {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important; /* Deeper shadow on hover */
+}
+
+.search-text,
+.search-input {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #222222;
+    padding: 0 0.5rem;
+}
+
+.search-input {
+    outline: none;
+    min-width: 12rem;
+}
+
+.search-input::placeholder {
+    color: #717171;
+}
+
+.search-divider {
+    color: #dddddd;
+    font-size: 1.2rem;
+    margin: 0 0.2rem;
+}
+
+.search-icon-container {
+    background-color: #fe424d; /* Airbnb Red */
+    color: white;
+    border-radius: 50%;
+    padding: 0.6rem;
+    margin-left: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+/* Right Side Profile Pill */
+.profile-pill {
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+
+.profile-pill:hover {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
+}
+
+/* Adjust Navbar Height if needed */
+.navbar {
+    height: 5rem;
+    background-color: #f8f9fa !important; /* Ensure it stays white */
 }

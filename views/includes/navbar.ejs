@@ -1,15 +1,40 @@
-<nav class="navbar navbar-expand-md bg-body-tertiary border-bottom fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/"><i class="fa-regular fa-compass"></i></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" >
+<nav class="navbar navbar-expand-md bg-white border-bottom fixed-top">
+  <div class="container-fluid px-5"> <a class="navbar-brand d-flex align-items-center" href="/listings">
+      <i class="fa-regular fa-compass me-2" style="font-size: 2rem; color: #fe424d;"></i>
+      <span class="d-none d-lg-block fw-bold" style="color: #fe424d; font-size: 1.5rem;">HavenStay</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" aria-current="page" href="/">Home</a>
-        <a class="nav-link" href="/listings">Listings</a>
-        <a class="nav-link" href="/listings/new">Add New Listings</a>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
+      
+      <div class="navbar-nav mx-auto">
+        <form action="/listings" method="GET" class="d-flex">
+          <div class="search-bar d-flex align-items-center shadow-sm">
+            <input type="text" name="q" class="search-input border-0 bg-transparent" placeholder="Search destinations" value="<%= q %>">
+            <div class="search-icon-container">
+              <button type="submit" class="border-0 bg-transparent p-0 text-white">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
+
+      <div class="navbar-nav d-flex align-items-center">
+        <a class="nav-link fw-semibold me-3" href="/listings/new">Airbnb your home</a>
+        <a class="nav-link me-3" href="#"><i class="fa-solid fa-globe"></i></a>
+        
+        <% if (!currUser) { %>
+          <a class="nav-link me-2" href="/login">Login</a>
+          <a class="nav-link" href="/signup">Signup</a>
+        <% } else { %>
+          <a class="nav-link" href="/logout">Logout</a>
+        <% } %>
+      </div>
+      
     </div>
   </div>
 </nav>
