@@ -1,61 +1,16 @@
-HavenStay
-A full-stack accommodation booking platform built to demonstrate RESTful architecture, CRUD operations, and MVC design patterns.
+HavenStay HavenStay is a full-stack web application inspired by Airbnb, designed to connect travelers with unique accommodations. Built with the standard MEN Stack (MongoDB, Express, Node.js), it features a complete booking system where users can browse, create, edit, and delete property listings.
 
-Tech Stack
-Runtime: Node.js
+Key Features:
 
-Framework: Express.js
+🔐 Authentication: Secure user login/signup with session management (Passport.js).
 
-Database: MongoDB (Mongoose ODM)
+🛡️ Authorization: Route protection ensures only the owner of a listing can edit or delete it.
 
-Templating: EJS (Embedded JavaScript)
+📝 Reviews System: Users can leave ratings and reviews for properties.
 
-Styling: Bootstrap 5, Custom CSS
+☁️ Cloud Storage: Production data is hosted securely on MongoDB Atlas.
 
-Features
-CRUD Operations: Complete Create, Read, Update, and Delete functionality for property listings.
+🚀 Live Deployment: Hosted on Render with persistent data storage.
 
-MVC Architecture: Separation of concerns using Models for database schemas and Views for UI rendering.
-
-Database Seeding: Automated script (seed.js) to populate the database with dummy data for development testing.
-
-Responsive UI: Mobile-first design using Bootstrap grid system and custom CSS variables.
-
-RESTful Routing: Standardized URL patterns for resource management.
-
-### Setup & Installation
-
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/Mradul70/HavenStay.git](https://github.com/Mradul70/HavenStay.git)
-    cd HavenStay
-    ```
-
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
-
-3.  **Database Setup:**
-    Ensure MongoDB is running locally.
-    Seed the database with initial data:
-    ```bash
-    node seed.js
-    ```
-
-4.  **Run the application:**
-    ```bash
-    node app.js
-    ```
-    The server will start on port 8080.
-    Open `http://localhost:8080` in your browser to view the app.
-
-Engineering Decisions
-Server-Side Rendering: EJS was chosen over client-side frameworks (React/Vue) to maintain a monolithic structure, reducing complexity for this specific MVP scope.
-
-License
-This project is open source.
-
-NoSQL Database: MongoDB was selected for its schema flexibility, particularly for handling nested objects like image metadata within the Listing schema.
-
-CSS Framework: Bootstrap 5 is utilized to enforce layout consistency and responsiveness without writing extensive custom media queries.
+try here:
+https://havenstay-9s9h.onrender.com/
